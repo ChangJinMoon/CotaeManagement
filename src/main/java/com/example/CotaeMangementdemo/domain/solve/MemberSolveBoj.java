@@ -1,10 +1,10 @@
 package com.example.CotaeMangementdemo.domain.solve;
 
 import com.example.CotaeMangementdemo.domain.member.Member;
+import com.example.CotaeMangementdemo.domain.problem.BojProblem;
 import lombok.Getter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -17,5 +17,16 @@ public class MemberSolveBoj {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id")
     private Member member;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id")
+    private BojProblem problem;
+
+    public MemberSolveBoj createSolveProblem(Member member, BojProblem problem){
+        MemberSolveBoj temp = new MemberSolveBoj();
+        temp.member = member;
+        temp.problem = problem;
+        return temp;
+    }
 
 }

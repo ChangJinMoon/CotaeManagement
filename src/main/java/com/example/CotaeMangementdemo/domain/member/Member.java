@@ -33,6 +33,11 @@ public class Member {
     @JoinColumn(name = "hint_id")
     private MemberPasswordHintSet hint;
 
+    @OneToOne
+    @JoinColumn(name = "setting_id")
+    private MemberSetting setting;
+
+
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<MemberSolveBoj> memberSolveBoj = new ArrayList<>();
 
@@ -46,6 +51,7 @@ public class Member {
         temp.name = name;
         temp.role = role;
         temp.hint = hintSet;
+        temp.setting = new MemberSetting().createMemberSetting();
         temp.joinDate = LocalDateTime.now();
         return temp;
     }
