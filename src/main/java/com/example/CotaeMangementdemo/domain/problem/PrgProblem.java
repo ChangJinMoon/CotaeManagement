@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "programmers_problem")
 @Getter
-public class PrgProblem {
+public class PrgProblem{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,7 +31,7 @@ public class PrgProblem {
     @OneToMany(mappedBy = "problem", cascade = CascadeType.ALL)
     private List<MemberSolvePrg> memberSolveBojList = new ArrayList<>();
 
-    PrgProblem createProblem(Long problemId, String problemName, PrgLevel prgLevel, String url) {
+    public PrgProblem createProblem(Long problemId, String problemName, PrgLevel prgLevel, String url) {
         PrgProblem problem = new PrgProblem();
         problem.problemId = problemId;
         problem.problemName = problemName;
@@ -39,4 +39,5 @@ public class PrgProblem {
         problem.url = url;
         return problem;
     }
+
 }

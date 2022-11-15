@@ -15,6 +15,8 @@ public class MemberSettingJpaRepository implements MemberSettingRepository {
 
     @Override
     public boolean save(MemberSetting memberSetting) {
+        if(load(memberSetting.getId()).isPresent())
+            return false;
         entityManager.persist(memberSetting);
         return true;
     }

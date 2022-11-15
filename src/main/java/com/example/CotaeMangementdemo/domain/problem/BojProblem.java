@@ -2,6 +2,7 @@ package com.example.CotaeMangementdemo.domain.problem;
 
 import com.example.CotaeMangementdemo.domain.solve.MemberSolveBoj;
 import com.example.CotaeMangementdemo.status.BojLevel;
+import com.example.CotaeMangementdemo.status.PrgLevel;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "bakjoon_problem")
 @Getter
-public class BojProblem {
+public class BojProblem{
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -29,7 +30,7 @@ public class BojProblem {
     @OneToMany(mappedBy = "problem", cascade = CascadeType.ALL)
     private List<MemberSolveBoj> memberSolveBojList = new ArrayList<>();
 
-    BojProblem createProblem(Long problemId, String problemName, BojLevel bojLevel, String url) {
+    public BojProblem createProblem(Long problemId, String problemName, BojLevel bojLevel, String url) {
         BojProblem problem = new BojProblem();
         problem.problemId = problemId;
         problem.problemName = problemName;

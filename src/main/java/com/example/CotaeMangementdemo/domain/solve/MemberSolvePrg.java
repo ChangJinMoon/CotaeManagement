@@ -23,7 +23,7 @@ public class MemberSolvePrg {
     @JoinColumn(name = "id")
     private PrgProblem problem;
 
-    public MemberSolvePrg createSolveProblem(Member member, PrgProblem problem){
+    public MemberSolvePrg createSolveProblem(Member member, PrgProblem problem) {
         MemberSolvePrg temp = new MemberSolvePrg();
         temp.member = member;
         temp.problem = problem;
