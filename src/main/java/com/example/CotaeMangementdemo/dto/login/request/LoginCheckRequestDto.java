@@ -1,4 +1,4 @@
-package com.example.CotaeMangementdemo.dto.login;
+package com.example.CotaeMangementdemo.dto.login.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
