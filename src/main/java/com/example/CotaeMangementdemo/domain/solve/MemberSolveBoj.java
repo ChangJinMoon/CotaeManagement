@@ -2,6 +2,7 @@ package com.example.CotaeMangementdemo.domain.solve;
 
 import com.example.CotaeMangementdemo.domain.member.Member;
 import com.example.CotaeMangementdemo.domain.problem.BojProblem;
+import com.example.CotaeMangementdemo.domain.problem.PrgProblem;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -28,5 +29,4 @@ public class MemberSolveBoj {
         temp.problem = problem;
         return temp;
     }
-
 }
